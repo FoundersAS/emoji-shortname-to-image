@@ -1,0 +1,22 @@
+{
+  "name": "emoji-shortname-to-image",
+  "description": "Replace emoji shortnames with image tags",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FoundersAS/emoji-shortname-to-image/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoundersAS/emoji-shortname-to-image.git"
+  },
+  "homepage": "https://github.com/FoundersAS/emoji-shortname-to-image",
+  "author": "kasper@founders.as",
+  "scripts": {
+    "build": "rm -rf data && mkdir data && node bin/build-data.js"
+  },
+  "devDependencies": {
+    "emoji-datasource": "^3.0.0"
+  }
+}
