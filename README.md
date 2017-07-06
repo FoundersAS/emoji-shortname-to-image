@@ -21,4 +21,4 @@ The `cdn url` should point to a folder where the png's are located *with* a trai
 
 # 🙌 Thanks
 
-Powered by [iamcal/emoji-data](https://github.com/iamcal/emoji-data)
+Powered by [iamcal/emoji-data](https://github.com/iamcal/emoji-data) and [emojione/emojione](https://github.com/emojione/emojione)
