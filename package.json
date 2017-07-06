@@ -1,7 +1,7 @@
 {
   "name": "emoji-shortname-to-image",
   "description": "Replace emoji shortnames with image tags",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
   "bugs": {
