@@ -17,6 +17,16 @@ emoji-shortname-to-image
     // Outputs:
     // <img class="emojishort" src="https://your-cdn-url.com/with-trailing-slash/1f950.png" alt=":croissant:" title=":croissant:" />
 
+    console.log(emoji.toUnicode(':croissant:'));
+
+    // Outputs:
+    // 🥐
+
+    console.log(emoji.unicodeToImage('🥐'));
+
+    // Outputs:
+    // <img class="emojishort" src="https://your-cdn-url.com/with-trailing-slash/1f950.png" alt=":croissant:" title=":croissant:" />
+
 The `cdn url` should point to a folder where the png's are located *with* a trailing `/`
 
 # 🙌 Thanks

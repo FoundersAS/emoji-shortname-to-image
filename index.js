@@ -1,4 +1,12 @@
+const emojiRegex = require('emoji-regex');
+
 const emojiMap = require('./data/data');
+
+const unicodeMap = Object.keys(emojiMap).reduce((prev, curr) => {
+  const entry = emojiMap[curr];
+  prev[entry.unicode] = { image: entry.image, shortname: curr };
+  return prev;
+}, {});
 
 class EmojiShort {
   constructor (cdnUrl, klass = 'emojishort') {
@@ -8,12 +16,13 @@ class EmojiShort {
     this.shortnames = Object.keys(emojiMap).join('|').replace(/\+/g, '\\+');
     this.shortnamePattern = new RegExp(this.shortnames, 'gi');
 
-    this.unicodes = Object.keys(emojiMap).map(k => emojiMap[k].unicode).join('|');
-
     this._replaceShortNameWithImgTag = this._replaceShortNameWithImgTag.bind(this);
     this._replaceShortNameWithUnicode = this._replaceShortNameWithUnicode.bind(this);
+    this._replaceUnicodeWithImgTag = this._replaceUnicodeWithImgTag.bind(this);
 
     this.toImage = this.toImage.bind(this);
+    this.toUnicode = this.toUnicode.bind(this);
+    this.unicodeToImage = this.unicodeToImage.bind(this);
   }
 
   toImage (string) {
@@ -24,6 +33,10 @@ class EmojiShort {
     return string.replace(this.shortnamePattern, this._replaceShortNameWithUnicode);
   }
 
+  unicodeToImage (string) {
+    return string.replace(emojiRegex(), this._replaceUnicodeWithImgTag);
+  }
+
   _replaceShortNameWithImgTag (shortname) {
     const image = emojiMap[shortname].image;
     if (!image) return shortname;
@@ -32,6 +45,12 @@ class EmojiShort {
 
   _replaceShortNameWithUnicode (shortname) {
     return emojiMap[shortname].unicode;
+  }
+
+  _replaceUnicodeWithImgTag (unicode) {
+    const { image, shortname } = unicodeMap[unicode];
+    if (!image) return unicode;
+    return `<img class="${this.klass}" src="${this.cdnUrl}${image}" alt="${shortname}" title="${shortname}" />`;
   }
 }
 

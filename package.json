@@ -19,5 +19,8 @@
   "devDependencies": {
     "emoji-datasource": "^3.0.0",
     "emojione": "^3.1.0"
+  },
+  "dependencies": {
+    "emoji-regex": "^6.4.3"
   }
 }
