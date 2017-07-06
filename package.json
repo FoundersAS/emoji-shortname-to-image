@@ -17,6 +17,7 @@
     "build": "rm -rf data && mkdir data && node bin/build-data.js"
   },
   "devDependencies": {
-    "emoji-datasource": "^3.0.0"
+    "emoji-datasource": "^3.0.0",
+    "emojione": "^3.1.0"
   }
 }
