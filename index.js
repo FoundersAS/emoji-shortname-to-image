@@ -48,9 +48,9 @@ class EmojiShort {
   }
 
   _replaceUnicodeWithImgTag (unicode) {
-    const { image, shortname } = unicodeMap[unicode];
-    if (!image) return unicode;
-    return `<img class="${this.klass}" src="${this.cdnUrl}${image}" alt="${shortname}" title="${shortname}" />`;
+    const emoji = unicodeMap[unicode];
+    if (!emoji) return unicode;
+    return `<img class="${this.klass}" src="${this.cdnUrl}${emoji.image}" alt="${emoji.shortname}" title="${emoji.shortname}" />`;
   }
 }
 
