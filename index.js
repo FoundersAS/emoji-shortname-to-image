@@ -38,9 +38,9 @@ class EmojiShort {
   }
 
   _replaceShortNameWithImgTag (shortname) {
-    const image = emojiMap[shortname].image;
-    if (!image) return shortname;
-    return `<img class="${this.klass}" src="${this.cdnUrl}${image}" alt="${shortname}" title="${shortname}" />`;
+    const emoji = emojiMap[shortname];
+    if (!emoji) return shortname;
+    return `<img class="${this.klass}" src="${this.cdnUrl}${emoji.image}" alt="${shortname}" title="${shortname}" />`;
   }
 
   _replaceShortNameWithUnicode (shortname) {
