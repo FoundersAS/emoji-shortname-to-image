@@ -14,13 +14,15 @@
   "homepage": "https://github.com/FoundersAS/emoji-shortname-to-image",
   "author": "kasper@founders.as",
   "scripts": {
-    "build": "rm -rf data && mkdir data && node bin/build-data.js"
+    "build": "rm -rf data && mkdir data && node bin/build-data.js",
+    "test": "jest"
   },
   "devDependencies": {
-    "emoji-datasource": "^3.0.0",
-    "emojione": "^3.1.0"
+    "emoji-datasource": "^4.0.4",
+    "emojione": "^3.1.2",
+    "jest": "^22.4.3"
   },
   "dependencies": {
-    "emoji-regex": "^6.4.3"
+    "emoji-regex": "^6.5.1"
   }
 }
